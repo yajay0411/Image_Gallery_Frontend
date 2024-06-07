@@ -30,7 +30,7 @@ function InfinteImageScroll() {
 
   const dispatch: AppDispatch = useDispatch();
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [fetchedData, setFetchedData] = useState([]);
   const [fetchError, setFetchError] = useState("");
 
@@ -48,10 +48,13 @@ function InfinteImageScroll() {
       }
     } catch (error) {
       setFetchError(error);
-    } finally {
-      setIsLoading(false);
     }
+    setIsLoading(false);
   }, [debouncedSearchTerm, page]);
+
+  useEffect(() => {
+    dispatch(setImagesEmpty());
+  }, [debouncedSearchTerm]);
 
   useEffect(() => {
     fetchImages();
