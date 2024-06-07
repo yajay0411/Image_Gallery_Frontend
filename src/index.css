@@ -1,0 +1,84 @@
+html,
+body,
+#root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --link-main-dark: #ffa600;
+  --link-main-light: #0046ff;
+  --link-main-primary-dark: #543310;
+  --link-main-primary-light: #f8f4e1;
+}
+
+div .app {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.header {
+  position: absolute;
+  top: 0px;
+  width: inherit;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  position: absolute;
+  top: 10vh;
+  width: inherit;
+  height: 90vh;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.content {
+  width: inherit;
+  height: inherit;
+  margin: 20px;
+  /* display: flex;
+  justify-content: center;
+  align-items: start; */
+}
+
+.theme-toggle-absolute {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.top-scroll-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.top-scroll-btn button {
+  background: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.start {
+  width: inherit;
+  height: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}

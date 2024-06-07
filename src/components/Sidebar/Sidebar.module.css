@@ -1,0 +1,29 @@
+.sidebar-container {
+  margin: 10px;
+  width: 60px;
+}
+
+.close-menu-button {
+  width: inherit;
+  margin-top: 10px;
+}
+
+.sidebar {
+  width: 220px;
+}
+.side-bar-header {
+  margin: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-item-wrapper {
+  margin: 20px;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: var(--link-main-primary-dark);
+  font-weight: 400;
+}

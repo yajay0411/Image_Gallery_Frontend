@@ -1,0 +1,22 @@
+.redirect-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.redirect-link p {
+  margin-bottom: 0px;
+}
+
+.redirect-link-light a {
+  text-decoration: none;
+  color: var(--link-main-light);
+  font-weight: 600;
+}
+
+.redirect-link-dark a {
+  text-decoration: none;
+  color: var(--link-main-dark);
+  font-weight: 600;
+}
