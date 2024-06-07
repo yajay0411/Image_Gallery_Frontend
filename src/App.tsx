@@ -6,9 +6,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import PrivateRoute from "./components/Layout/PrivateRoute";
 import SimpleBackdrop from "./components/BackDrop/SimpleBackDrop";
 import { RootState } from "./redux/Store";
-import { createTheme } from "@mui/material/styles";
-import { darkThemeSettings } from "./theme/DarkTheme";
-import { lightThemeSettings } from "./theme/LightTheme";
+import { themeSettings } from "./theme";
 
 // extend lazy component with `preload` property
 interface LazyPreload<Props>
@@ -38,10 +36,7 @@ const App: React.FC = () => {
   const loading = useSelector((state: RootState) => state.BaseReducer.backdrop);
   const mode = useSelector((state: RootState) => state.ThemeReducer.mode);
   // const theme = themeSettings(mode);
-  const theme = useMemo(
-    () => createTheme(mode === "dark" ? darkThemeSettings : lightThemeSettings),
-    [mode]
-  );
+  const theme = useMemo(() => themeSettings(mode), [mode]);
   return (
     <>
       <ThemeProvider theme={theme}>
