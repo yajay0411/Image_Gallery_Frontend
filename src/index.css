@@ -14,6 +14,8 @@ body,
   --link-main-light: #0046ff;
   --link-main-primary-dark: #543310;
   --link-main-primary-light: #f8f4e1;
+  --link-main-background-light: #f6f7ff;
+  --link-main-background-dark: #32303b;
 }
 
 div .app {
@@ -50,9 +52,15 @@ div .app {
   width: inherit;
   height: inherit;
   margin: 20px;
-  /* display: flex;
-  justify-content: center;
-  align-items: start; */
+  padding: 20px;
+}
+
+.content-dark {
+  background: var(--link-main-background-dark);
+}
+
+.content-light {
+  background: var(--link-main-background-light);
 }
 
 .theme-toggle-absolute {
