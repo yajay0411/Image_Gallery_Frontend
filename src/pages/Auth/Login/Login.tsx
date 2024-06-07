@@ -53,8 +53,6 @@ const Login: React.FC = () => {
 
     const login = await AuthService.login(data);
 
-    console.log(login);
-
     if (login.status_code === 200) {
       dispatch(isLogin());
       navigate(fromPath);
