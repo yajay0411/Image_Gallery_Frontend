@@ -1,5 +1,5 @@
 import React from "react";
-import { Close, Refresh, Search } from "@material-ui/icons";
+import { Close, Refresh } from "@material-ui/icons";
 import css from "./inifiniteImageScroll.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/Store";
