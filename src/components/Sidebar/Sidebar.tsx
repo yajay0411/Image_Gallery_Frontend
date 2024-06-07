@@ -5,10 +5,19 @@ import { Link } from "react-router-dom";
 import { AppDispatch } from "../../redux/Store";
 import { useDispatch } from "react-redux";
 import { hideMenu } from "../../redux/reducers/BaseReducer";
+import { makeStyles } from "@material-ui/core/styles";
 
 interface MyComponentProps {
   open: boolean;
 }
+
+const useStyles = makeStyles(() => ({
+  aside: {
+    background: "none",
+    backdropFilter: "blur(10px)",
+    overflow: "hidden",
+  },
+}));
 
 const Sidebar: React.FC<MyComponentProps> = ({ open }) => {
   const dispatch: AppDispatch = useDispatch();
@@ -16,11 +25,17 @@ const Sidebar: React.FC<MyComponentProps> = ({ open }) => {
     dispatch(hideMenu());
   };
 
-  console.log(open);
+  const classes = useStyles();
 
   return (
     <>
-      <Drawer anchor="left" open={open} onClose={handleOnClose}>
+      <Drawer
+        anchor="left"
+        open={open}
+        onClose={handleOnClose}
+        className={css["sidebar-wrapper"]}
+        classes={{ paper: classes.aside }}
+      >
         <div className={css["sidebar"]}>
           <Grid
             container
@@ -35,6 +50,7 @@ const Sidebar: React.FC<MyComponentProps> = ({ open }) => {
                   color="inherit"
                   aria-label="open drawer"
                   onClick={handleOnClose}
+                  style={{ color: "white" }}
                 >
                   <Close />
                 </IconButton>
