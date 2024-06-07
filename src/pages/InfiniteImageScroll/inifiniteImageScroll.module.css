@@ -11,9 +11,7 @@
 
 .search-bar {
   width: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin: 10px;
 }
 
 .search-bar input {
@@ -88,20 +86,28 @@
   height: 100%;
   object-fit: contain;
   border-radius: 0.3rem; /* Equivalent to rounded-lg */
-  position: relative;
 }
 
 .hover-wrapper {
+  /* width: inherit; */
   position: absolute; /* Tailwind's absolute */
   bottom: 0; /* Tailwind's bottom-0 */
+  left: 0;
   background-color: rgba(
-    255,
-    255,
-    255,
+    26,
+    25,
+    25,
     0.6
   ); /* Tailwind's bg-white and bg-opacity-60 */
-  border-top-right-radius: 100%; /* Tailwind's rounded-tr-full */
-  padding-right: 1rem; /* Tailwind's pr-5 */
+  border-top-right-radius: 90%;
+  padding: 1rem; /* Tailwind's pr-5 */
+}
+
+.download-btn-wrapper {
+  position: absolute; /* Tailwind's absolute */
+  top: 0; /* Tailwind's bottom-0 */
+  right: 0;
+  background-color: white;
 }
 
 .image-uploader {
