@@ -20,13 +20,11 @@ const PrivateRoute: React.FC<RouteProps> = () => {
         <nav className="header">
           <Stack>
             <Appbar />
-            <Sidebar open={menu} />
+            {menu && <Sidebar open={menu} />}
           </Stack>
         </nav>
         <main className="main">
-          {/* <Stack sx={{ padding: "10px" }}> */}
           <Outlet />
-          {/* </Stack> */}
         </main>
       </>
     );
