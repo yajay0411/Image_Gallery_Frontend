@@ -48,8 +48,9 @@ function InfinteImageScroll() {
       }
     } catch (error) {
       setFetchError(error);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   }, [debouncedSearchTerm, page]);
 
   useEffect(() => {
@@ -110,11 +111,10 @@ function InfinteImageScroll() {
           <ResponsiveMasonry
             columnsCountBreakPoints={{
               300: 1,
-              350: 2,
-              750: 3,
-              900: 4,
-              1200: 5,
-              1500: 6,
+              700: 2,
+              1100: 3,
+              1500: 4,
+              1900: 5,
             }}
           >
             <Masonry gutter="10px">
