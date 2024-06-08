@@ -15,6 +15,17 @@ import SimpleBackdrop from "../../components/BackDrop/SimpleBackDrop";
 import { ArrowUpward } from "@material-ui/icons";
 import axios from "axios";
 
+type ImageDetails = {
+  likes?: number;
+  downloads?: number;
+  views?: number;
+  webformatURL?: string;
+  user?: string;
+  userImageURL?: string;
+  largeImageURL?: string;
+  tags?: string;
+};
+
 function InfinteImageScroll() {
   const images = useSelector(
     (state: RootState) => state.InfiniteImageScrollReducer.images
@@ -31,7 +42,7 @@ function InfinteImageScroll() {
   const dispatch: AppDispatch = useDispatch();
 
   const [isLoading, setIsLoading] = useState(false);
-  const [fetchedData, setFetchedData] = useState([]);
+  const [fetchedData, setFetchedData] = useState<ImageDetails[]>([]);
   const [fetchError, setFetchError] = useState("");
 
   const fetchImages = useCallback(async () => {
@@ -47,7 +58,7 @@ function InfinteImageScroll() {
         setFetchedData(data.hits);
       }
     } catch (error) {
-      setFetchError(error);
+      setFetchError(`${error}`);
     } finally {
       setIsLoading(false);
     }

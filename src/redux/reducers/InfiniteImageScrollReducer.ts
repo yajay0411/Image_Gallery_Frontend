@@ -12,7 +12,7 @@ interface ImageDetails {
 }
 
 interface InfiniteImageScrollReducerState {
-  images: Array<ImageDetails>;
+  images: ImageDetails[];
   term: string;
   page: number;
   scrollHeight: number;
@@ -29,7 +29,7 @@ const InfiniteImageScrollReducerSlice = createSlice({
   name: "authSlice",
   initialState,
   reducers: {
-    setImages: (state, action: PayloadAction<[ImageDetails]>) => {
+    setImages: (state, action: PayloadAction<ImageDetails[]>) => {
       state.images = [...state.images, ...action.payload];
     },
     setImagesEmpty: (state) => {

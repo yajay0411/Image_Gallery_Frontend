@@ -93,14 +93,25 @@
   position: absolute; /* Tailwind's absolute */
   bottom: 0; /* Tailwind's bottom-0 */
   left: 0;
+  border-top-right-radius: 90%;
+  padding: 1rem; /* Tailwind's pr-5 */
+}
+
+.hover-bg-dark {
   background-color: rgba(
     26,
     25,
     25,
     0.6
   ); /* Tailwind's bg-white and bg-opacity-60 */
-  border-top-right-radius: 90%;
-  padding: 1rem; /* Tailwind's pr-5 */
+}
+.hover-bg-light {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.644
+  ); /* Tailwind's bg-white and bg-opacity-60 */
 }
 
 .download-btn-wrapper {

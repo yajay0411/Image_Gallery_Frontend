@@ -4,6 +4,8 @@ import { useState } from "react";
 import css from "./inifiniteImageScroll.module.css";
 import { ArrowDownward } from "@material-ui/icons";
 import { Grid, IconButton } from "@material-ui/core";
+import { RootState } from "../../redux/Store";
+import { useSelector } from "react-redux";
 
 interface ImageDetails {
   likes?: number;
@@ -51,6 +53,8 @@ const ImageCard = ({ image }: { image: ImageDetails }) => {
     }
   };
 
+  const mode = useSelector((state: RootState) => state.ThemeReducer.mode);
+
   return (
     <>
       <div
@@ -89,7 +93,13 @@ const ImageCard = ({ image }: { image: ImageDetails }) => {
                   alignItems="flex-end"
                   spacing={2}
                 >
-                  <div className={css["hover-wrapper"]}>
+                  <div
+                    className={`${css["hover-wrapper"]} ${
+                      mode === "dark"
+                        ? css["hover-bg-dark"]
+                        : css["hover-bg-light"]
+                    }`}
+                  >
                     <Grid item>
                       <img
                         src={userImageURL}
